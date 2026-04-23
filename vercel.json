@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": false
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "docusaurus-2",
+  "installCommand": "npm install --legacy-peer-deps",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/enforce", "destination": "/layers/enforce", "permanent": true },
+    { "source": "/proof", "destination": "/layers/proof", "permanent": true },
+    { "source": "/chain", "destination": "/layers/chain", "permanent": true },
+    { "source": "/car", "destination": "/layers/car", "permanent": true },
+    { "source": "/intent", "destination": "/layers/intent", "permanent": true }
+  ]
+}
