@@ -19,7 +19,7 @@ The CHAIN layer is an **optional** extension of the PROOF layer — anchoring pr
 1. **Commit** — Write proof hash to smart contract
 2. **Confirm** — Wait for block confirmation
 3. **Index** — Track anchored proofs
-4. **Verify** — Enable trustless verification
+4. **Verify** — Enable independent verification
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
