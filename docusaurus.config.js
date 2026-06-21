@@ -88,6 +88,16 @@ const config = {
             label: 'Standard',
           },
           {
+            to: '/basis',
+            label: 'BASIS',
+            position: 'left',
+          },
+          {
+            to: '/spec',
+            label: 'Spec 0.9',
+            position: 'left',
+          },
+          {
             to: '/compliance',
             label: 'Compliance',
             position: 'left',

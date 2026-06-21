@@ -1,0 +1,288 @@
+/* =============================================================================
+   VORION DESIGN SYSTEM — base layout for system documentation pages
+   Loads after tokens.css. Provides typography defaults, layout chrome, and the
+   doc-page primitives (TopBar, SectionHeader, TokenCard, SwatchGrid, etc.)
+   used across every page in this design system.
+   ============================================================================= */
+
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { font-family: "Inter", system-ui, sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: "Inter var", system-ui, sans-serif; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--scale-16);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--site-accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+::selection { background: var(--site-accent); color: white; }
+
+/* ── DOC PAGE LAYOUT ─────────────────────────────────────────────────────── */
+.doc-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+.doc-shell > nav.sidebar {
+  background: var(--bg-alt);
+  border-right: 1px solid var(--border);
+  padding: var(--space-8) var(--space-6);
+  position: sticky; top: 0; align-self: start;
+  height: 100vh; overflow-y: auto;
+}
+.doc-shell > main {
+  padding: var(--space-12) var(--space-16);
+  max-width: 1200px;
+}
+
+.sidebar .brand {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+.sidebar .brand img { width: 36px; height: 36px; object-fit: contain; }
+.sidebar .brand .wordmark { font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
+.sidebar .brand .system-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); margin-top: 2px; }
+
+.sidebar .group-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: var(--space-6) 0 var(--space-2) 0;
+}
+.sidebar a.nav-item {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  color: var(--fg-subtle);
+  text-decoration: none;
+  margin-bottom: 1px;
+}
+.sidebar a.nav-item:hover { background: var(--bg-deep); color: var(--fg); text-decoration: none; }
+.sidebar a.nav-item[aria-current="page"] {
+  background: var(--site-accent-soft);
+  color: var(--site-accent-dim);
+  font-weight: 500;
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────────────────────── */
+.page-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--site-accent);
+  margin-bottom: var(--space-3);
+}
+.page-title {
+  font-size: var(--scale-48);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0 0 var(--space-4) 0;
+}
+.page-lede {
+  font-size: var(--scale-18);
+  color: var(--fg-muted);
+  max-width: 68ch;
+  margin: 0 0 var(--space-12) 0;
+  line-height: 1.6;
+}
+
+/* ── SECTIONS ────────────────────────────────────────────────────────────── */
+.section { margin-bottom: var(--space-24); }
+.section h2 {
+  font-size: var(--scale-24);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-2) 0;
+  display: flex; align-items: baseline; gap: var(--space-3);
+}
+.section h2 .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+.section .section-lede {
+  color: var(--fg-muted);
+  margin: 0 0 var(--space-6) 0;
+  max-width: 64ch;
+}
+
+/* ── CARDS / GRIDS ───────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.card-tight { padding: var(--space-4); }
+
+.grid { display: grid; gap: var(--space-4); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* ── SWATCHES ────────────────────────────────────────────────────────────── */
+.swatch {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+}
+.swatch .chip { height: 80px; }
+.swatch .meta { padding: var(--space-3) var(--space-4); }
+.swatch .meta .name { font-weight: 500; font-size: 13px; }
+.swatch .meta .hex {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.swatch .meta .var {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  margin-top: 4px;
+}
+.swatch--lg .chip { height: 140px; }
+
+/* ── TYPE SPECIMEN ───────────────────────────────────────────────────────── */
+.type-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+  align-items: baseline;
+}
+.type-row:first-child { border-top: none; }
+.type-row .type-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.type-row .type-meta .role { color: var(--fg); display: block; font-size: 13px; text-transform: none; letter-spacing: 0; margin-top: 4px; }
+.type-row .type-sample { color: var(--fg); }
+
+/* ── TOKEN TABLE ─────────────────────────────────────────────────────────── */
+.token-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.token-table th, .token-table td {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.token-table th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+.token-table td.var { font-family: var(--font-mono); color: var(--fg); }
+.token-table td.val { font-family: var(--font-mono); color: var(--fg-muted); font-size: 12px; }
+.token-table td.dot::before {
+  content: "";
+  display: inline-block;
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  margin-right: var(--space-3);
+  vertical-align: -3px;
+  border: 1px solid var(--border);
+  background: var(--swatch, transparent);
+}
+
+/* ── DO/DON'T ────────────────────────────────────────────────────────────── */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.do-dont > div {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  background: var(--bg);
+}
+.do-dont .do { border-left: 3px solid var(--success); }
+.do-dont .dont { border-left: 3px solid var(--danger); }
+.do-dont .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+.do-dont .do .label { color: var(--success); }
+.do-dont .dont .label { color: var(--danger); }
+
+/* ── PILL / BADGE / MONO TAG ─────────────────────────────────────────────── */
+.tag-mono {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  color: var(--fg-subtle);
+}
+.tag-accent {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--site-accent);
+  color: var(--site-accent);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── HERO PANELS (used on home + product pages) ──────────────────────────── */
+.hero-panel {
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+.hero-panel.hero-deep {
+  background: linear-gradient(135deg, #0B1A2E 0%, #1E293B 60%, #0F172A 100%);
+  color: white;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .doc-shell { grid-template-columns: 1fr; }
+  .doc-shell > nav.sidebar { position: static; height: auto; }
+  .doc-shell > main { padding: var(--space-8); }
+  .grid-3, .grid-4, .grid-6 { grid-template-columns: repeat(2, 1fr); }
+  .do-dont { grid-template-columns: 1fr; }
+  .type-row { grid-template-columns: 1fr; gap: var(--space-2); }
+}

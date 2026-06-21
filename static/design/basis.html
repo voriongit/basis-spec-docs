@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-site="basis" data-theme="light">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BASIS · the standard</title>
+<link rel="icon" href="/design/assets/favicon-64.png" />
+  <link rel="preconnect" href="https://rsms.me" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" />
+<link rel="stylesheet" href="/design/css/tokens.css" />
+<link rel="stylesheet" href="/design/css/base.css" />
+<link rel="stylesheet" href="/design/css/_product-shell.css" />
+<style>
+  /* BASIS exception: serif lockup permitted on this property only */
+  .basis-mark {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 96px;
+    letter-spacing: -0.04em;
+    color: var(--fg);
+    line-height: 1;
+  }
+  .basis-mark .dot { color: var(--site-accent); }
+
+  .equation {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.6;
+    color: var(--fg);
+    padding: var(--space-8);
+    background: var(--bg-alt);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--site-accent);
+  }
+  .equation .lhs { color: var(--site-accent); font-weight: 500; }
+  .equation .op { font-style: normal; color: var(--fg-muted); margin: 0 8px; }
+</style>
+</head>
+<body>
+<div class="doc-shell" data-screen-label="Property — BASIS">
+  <nav class="sidebar">
+    <a class="brand" href="/" style="text-decoration:none; color:inherit;">
+      <img src="/design/assets/orb-source.png" alt="" />
+      <div><div class="wordmark">BASIS</div><div class="system-tag">The Standard</div></div>
+    </a>
+    <div class="group-label">Standard</div>
+    <a class="nav-item" href="/basis" aria-current="page">Overview</a>
+    <a class="nav-item" href="/spec">Specification 0.9</a>
+    <a class="nav-item" href="/">Documentation home</a>
+    <div class="group-label">Layers</div>
+    <a class="nav-item" href="/layers/car">CAR</a>
+    <a class="nav-item" href="/layers/intent">INTENT</a>
+    <a class="nav-item" href="/layers/enforce">ENFORCE</a>
+    <a class="nav-item" href="/layers/trust">TRUST</a>
+    <a class="nav-item" href="/layers/proof">PROOF</a>
+    <a class="nav-item" href="/layers/chain">CHAIN</a>
+    <div class="group-label">Products</div>
+    <a class="nav-item" href="/cognigate">Cognigate</a>
+    <a class="nav-item" href="/vorion-platform">Vorion Platform</a>
+  </nav>
+
+  <main>
+    <section class="prod-hero">
+      <div class="row">
+        <div>
+          <span class="kicker">▸ Property · the standard</span>
+          <h1>BASIS<span class="accent">.</span></h1>
+          <p class="lede">The open mathematical and procedural specification every other Vorion property implements. Apache-2.0. Versioned. Conformance-tested. Boring on purpose.</p>
+          <div class="meta-grid">
+            <div>SITE<strong>basis.spec</strong></div>
+            <div>ACCENT<strong>violet-500 · #8B5CF6</strong></div>
+            <div>SERIF<strong>IBM Plex Serif</strong></div>
+            <div>VERSION<strong>0.9 · RFC stage</strong></div>
+          </div>
+        </div>
+        <div class="prod-mark-stage">
+          <div class="basis-mark">B<span class="dot">.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="role-block">
+      <div class="label">// the role</div>
+      <div>
+        <h2>The substrate everything else stands on.</h2>
+        <p>BASIS is not a product. It is a math+procedure specification — Behavior, Authority, Signature, Integrity, Scope. Cognigate enforces it, AgentAnchor certifies against it, Aurais surfaces it, Kaizen tunes it.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2><span class="num">/ 01</span> The five letters</h2>
+      <p class="section-lede">Each letter is a runtime invariant. An agent action that lacks any one of them does not exist as far as the chain is concerned.</p>
+      <div class="spec-list">
+        <div class="row"><div>letter</div><div>name</div><div>invariant</div><div>section</div></div>
+        <div class="row"><span class="seq">B</span><span class="name">Behavior</span><span class="desc">The action's intent and scope are declared <em>before</em> execution and matched at runtime.</span><span class="status">§ 4.1</span></div>
+        <div class="row"><span class="seq">A</span><span class="name">Authority</span><span class="desc">The agent's tier and grant chain are checked against a tamper-evident policy.</span><span class="status">§ 5.2</span></div>
+        <div class="row"><span class="seq">S</span><span class="name">Signature</span><span class="desc">Every event is signed by the agent's ed25519 key and counter-signed by the runtime.</span><span class="status">§ 6.0</span></div>
+        <div class="row"><span class="seq">I</span><span class="name">Integrity</span><span class="desc">Events form a Merkle chain. Reordering or deletion is detectable in O(log n).</span><span class="status">§ 7.4</span></div>
+        <div class="row"><span class="seq">S</span><span class="name">Scope</span><span class="desc">Resource boundaries are declared per-grant and enforced by the runtime gateway.</span><span class="status">§ 8.1</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">/ 02</span> The defining equation</h2>
+      <div class="equation">
+        <span class="lhs">trust(a, t)</span>
+        <span class="op">=</span>
+        Σ <sub>i</sub> behavior(a, i) <span class="op">·</span> sig(a, i) <span class="op">·</span> H<sub>chain</sub>(i)
+        <span class="op">/</span>
+        |scope(a)|
+      </div>
+      <p style="margin-top: var(--space-4); color: var(--fg-muted); max-width: 60ch;">"Trust at time <em>t</em> is the signed-and-chained behavior history, normalized by declared scope." This single line is the only place IBM Plex Serif appears anywhere in the system. It earned it.</p>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">/ 03</span> Who reads basis.spec</h2>
+      <div class="audience-row">
+        <div class="audience-tile">
+          <div class="who">// PRIMARY</div>
+          <h3>The implementer</h3>
+          <p>An engineer building a runtime, an SDK, a verifier, or a third-party gateway who needs the math precise enough to write code from.</p>
+          <div class="quote">Don't tell me a story. Give me the state machine, the wire format, and the test vectors.</div>
+        </div>
+        <div class="audience-tile">
+          <div class="who">// SECONDARY</div>
+          <h3>The auditor</h3>
+          <p>Compliance, security review, or external researcher who needs to confirm an implementation matches the spec exactly — and that the spec itself is sound.</p>
+          <div class="quote">Where's the conformance suite? Which vendors have passed which sections?</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">/ 04</span> Voice on this property</h2>
+      <p class="section-lede">Spec voice. Numbered sections. MUST/SHOULD/MAY in caps. Footnotes everywhere. No marketing language ever.</p>
+      <div class="do-dont">
+        <div class="do">
+          <div class="label">Sounds like</div>
+          <p style="margin:0;">"§ 6.0 — Implementations MUST sign every emitted event with an ed25519 key registered to the agent's tier-3 attestation. Implementations SHOULD rotate signing keys at intervals not exceeding 30 days."</p>
+        </div>
+        <div class="dont">
+          <div class="label">Doesn't sound like</div>
+          <p style="margin:0; text-decoration: line-through; color: var(--fg-muted);">"BASIS makes signing easy! Just plug in our SDK and you're chain-of-trust ready in minutes."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">/ 05</span> Mark on this property</h2>
+      <p class="section-lede">The serif <em>B.</em> lockup. Italic, low-saturation, tight tracking. The dot is the only place the violet accent appears on the cover. This is also the only place IBM Plex Serif appears in branding (it normally only shows up inside specifications).</p>
+      <div class="grid grid-3" style="margin-top: var(--space-6);">
+        <div class="card" style="aspect-ratio: 1.2/1; display:flex; align-items:center; justify-content:center;">
+          <div class="basis-mark" style="font-size: 88px;">B<span class="dot">.</span></div>
+        </div>
+        <div class="card" style="aspect-ratio: 1.2/1; display:flex; align-items:center; justify-content:center; background: var(--bg-alt);">
+          <div class="basis-mark" style="font-size: 88px;">B<span class="dot">.</span></div>
+        </div>
+        <div class="card" style="aspect-ratio: 1.2/1; display:flex; align-items:center; justify-content:center; background: #0F172A;">
+          <div class="basis-mark" style="font-size: 88px; color: white;">B<span class="dot">.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <a href="/spec" class="next-card">
+      <div>
+        <div class="label">Next</div>
+        <h4>BASIS · the specification ▸</h4>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </main>
+</div>
+</body>
+</html>
