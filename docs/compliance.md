@@ -18,7 +18,7 @@ BASIS maps directly to the requirements of key AI governance frameworks:
 |-----------|----------|---------|
 | **EU AI Act** | Articles 9, 13, 14, 17 | Risk classification, transparency, human oversight, quality management |
 | **NIST AI RMF** | MAP, MEASURE, MANAGE, GOVERN | Trust scoring, audit logging, policy enforcement, governance structure |
-| **ISO 42001** | Full AIMS alignment | AI management system controls mapped to BASIS layers |
+| **ISO 42001** | AIMS control mapping | AI management system controls mapped to BASIS layers (no certification claimed) |
 | **SOC 2** | Trust Services Criteria | Security, availability, processing integrity via PROOF layer |
 | **HIPAA** | Security & Privacy Rules | Access controls, audit trails, minimum necessary enforcement |
 | **FedRAMP** | FIPS 199 tiers | Graduated trust mapped to federal security impact levels |

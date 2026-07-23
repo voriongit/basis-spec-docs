@@ -21,7 +21,7 @@ The Vorion Platform is the enterprise platform for deploying and governing AI ag
 - **Trust Scoring** — Quantified trustworthiness (0-1000) with behavioral tracking
 - **Policy Enforcement** — Real-time governance with capability gating
 - **Audit Trails** — Immutable proof chains for every decision
-- **Compliance Ready** — EU AI Act, ISO 42001, NIST AI RMF aligned
+- **Compliance Mapping** — documented control mapping to EU AI Act, ISO 42001, NIST AI RMF (no certification claimed)
 
 ---
 
