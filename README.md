@@ -66,3 +66,17 @@ Apache-2.0 — see [LICENSE](./LICENSE).
 ---
 
 _Part of the [voriongit](https://github.com/voriongit) polyrepo ecosystem. See [voriongit/vorion-core](https://github.com/voriongit/vorion-core) for shared packages._
+
+## Deploying
+
+This repo is CLI-deployed to the Vercel project **basis-docs** (no git-auto):
+
+```bash
+npx vercel deploy --prod --yes
+# then re-point the domain — the basis.vorion.org alias is deployment-pinned:
+npx vercel alias set <new-deployment-url> basis.vorion.org --scope vorionsys
+```
+
+Skip the alias step and basis.vorion.org keeps serving the previous deployment.
+(Permanent fix: move the domain to the basis-docs project in the Vercel dashboard,
+then aliases follow production automatically.)
